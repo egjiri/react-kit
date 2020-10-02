@@ -1,0 +1,7 @@
+# External packages
+node_modules
+
+# Generated files
+build
+coverage
+yarn-error.log
