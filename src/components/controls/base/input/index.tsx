@@ -1,5 +1,5 @@
-import { ChangeEvent } from 'react';
-import { ReactInputProps, OnValueChange } from 'components/controls/types';
+import React, { ChangeEvent } from 'react';
+import { ReactInputProps, OnValueChange } from '../../../../components/controls/types';
 
 export type InputProps<T> = ReactInputProps & OnValueChange<T>;
 

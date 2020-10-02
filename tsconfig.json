@@ -3,17 +3,16 @@
     // Project Options
     "declaration": true,
     "lib": [
-      "ESNext",
+      "ES2019", // Overwrite the default which include DOM since this is not a browser environment
       "DOM",
       "DOM.Iterable"
     ],
-    "jsx": "preserve",
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "module": "CommonJS",
     "outDir": "build",
     "removeComments": true,
+    "jsx": "react",
     "rootDir": "src",
-    "target": "ES5",
+    "target": "ES2019", // Supported target for Node 12
     // Strict Checks
     "strict": true, // Always set to true and disable the individual checks while transitioning to strict mode
     // Module Resolution

@@ -1,5 +1,5 @@
-import { ChangeEvent } from 'react';
-import { ReactTextareaProps, OnValueChange } from 'components/controls/types';
+import React, { ChangeEvent } from 'react';
+import { ReactTextareaProps, OnValueChange } from '../../../../components/controls/types';
 
 export type TextareaProps = ReactTextareaProps & OnValueChange<string>;
 

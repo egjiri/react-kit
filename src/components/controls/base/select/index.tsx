@@ -1,5 +1,5 @@
-import { ChangeEvent } from 'react';
-import { ReactSelectProps, OnValueChange, SelectOptionValue, SelectOption } from 'components/controls/types';
+import React, { ChangeEvent } from 'react';
+import { ReactSelectProps, OnValueChange, SelectOptionValue, SelectOption } from '../../../../components/controls/types';
 
 export type SelectProps<T extends SelectOptionValue> = ReactSelectProps & OnValueChange<T> & {
   options: SelectOption<T>[],
