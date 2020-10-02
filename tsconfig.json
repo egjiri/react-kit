@@ -4,7 +4,10 @@
     "declaration": true,
     "lib": [
       "ES2019", // Overwrite the default which include DOM since this is not a browser environment
+      "DOM",
+      "DOM.Iterable"
     ],
+    "jsx": "preserve",
     "module": "CommonJS",
     "outDir": "build",
     "removeComments": true,
