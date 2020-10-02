@@ -13,7 +13,7 @@
     "outDir": "build",
     "removeComments": true,
     "rootDir": "src",
-    "target": "ESNext",
+    "target": "ES5",
     // Strict Checks
     "strict": true, // Always set to true and disable the individual checks while transitioning to strict mode
     // Module Resolution
