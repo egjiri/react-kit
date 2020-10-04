@@ -1,5 +1,5 @@
 import React, { ChangeEvent, DetailedHTMLProps, forwardRef, Ref, RefAttributes, TextareaHTMLAttributes } from 'react';
-import { ForwardRef, OnValueChange } from '../../../controls/types';
+import { OnValueChange } from '../../../controls/types';
 
 export type TextareaProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> & RefAttributes<HTMLTextAreaElement> & OnValueChange<string>;
 
@@ -15,4 +15,4 @@ export default forwardRef(({ onChange, onValueChange, ...textareaProps }: Textar
   };
 
   return <textarea {...textareaProps} onChange={onchangeHandler} ref={ref} />;
-}) as ForwardRef<HTMLTextAreaElement>;
+});
