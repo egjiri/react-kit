@@ -10,7 +10,7 @@
     "lint": "eslint .",
     "clean": "rm -rf build",
     "build": "yarn clean && tsc && find build -name '*.test.*' -delete && ts-node -O '{ \"module\": \"CommonJS\" }' scripts/prepare-package && cp README.md build",
-    "test": "nodemon -w src -e .ts -x 'clear && jest'",
+    "test": "nodemon -w src -e .ts,.tsx -x 'clear && jest'",
     "coverage": "jest --coverage && echo \"Coverage: $(cat ./coverage/coverage-summary.json | jq '.total.statements.pct')%\" && open coverage/index.html"
   },
   "dependencies": {
