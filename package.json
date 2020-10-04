@@ -14,7 +14,7 @@
     "coverage": "jest --coverage && echo \"Coverage: $(cat ./coverage/coverage-summary.json | jq '.total.statements.pct')%\" && open coverage/index.html"
   },
   "dependencies": {
-    "@egjiri/node-kit": "^1.2.0"
+    "@egjiri/node-kit": "^1.4.0"
   },
   "peerDependencies": {
     "react": "^16.13.1"
