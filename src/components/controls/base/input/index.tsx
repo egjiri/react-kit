@@ -1,5 +1,5 @@
 import React, { ChangeEvent, DetailedHTMLProps, forwardRef, InputHTMLAttributes, Ref, RefAttributes } from 'react';
-import { ForwardRef, OnValueChange } from '../../../../components/controls/types';
+import { ForwardRef, OnValueChange, ValueType } from '../../../../components/controls/types';
 
 export type ReactInputProps = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 export type InputProps<T> = ReactInputProps & RefAttributes<HTMLInputElement> & OnValueChange<T>;
@@ -30,7 +30,7 @@ function inferValueType(inputType: ReactInputProps['type']) {
   }
 }
 
-function getValue(event: ChangeEvent<HTMLInputElement>, valueType: 'number' | 'string' | 'boolean') {
+function getValue(event: ChangeEvent<HTMLInputElement>, valueType: ValueType) {
   if (valueType === 'number') {
     return parseFloat(event.target.value);
   } else if (valueType === 'boolean') {

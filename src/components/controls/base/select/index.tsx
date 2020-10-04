@@ -1,5 +1,5 @@
 import React, { ChangeEvent, DetailedHTMLProps, forwardRef, Ref, RefAttributes, SelectHTMLAttributes } from 'react';
-import { ForwardRef, OnValueChange, SelectOption, SelectOptionValue } from '../../../../components/controls/types';
+import { ForwardRef, OnValueChange, SelectOption, SelectOptionValue, ValueType } from '../../../../components/controls/types';
 
 export type SelectProps<T extends SelectOptionValue> = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> & RefAttributes<HTMLSelectElement> & OnValueChange<T> & {
   options: SelectOption<T>[],
@@ -34,10 +34,10 @@ export default forwardRef(<T extends SelectOptionValue>({ options, onChange, onV
 }) as ForwardRef<HTMLSelectElement>;
 
 function inferValueType(value: SelectOptionValue) {
-  return typeof value as 'string' | 'number' | 'boolean';
+  return typeof value as ValueType;
 }
 
-function getValue(event: ChangeEvent<HTMLSelectElement>, valueType: 'string' | 'number' | 'boolean') {
+function getValue(event: ChangeEvent<HTMLSelectElement>, valueType: ValueType) {
   if (valueType === 'number') {
     return parseFloat(event.target.value);
   } else if (valueType === 'boolean') {
