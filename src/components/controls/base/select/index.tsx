@@ -46,3 +46,7 @@ function getValue(event: ChangeEvent<HTMLSelectElement>, valueType: ValueType) {
     return event.target.value;
   }
 }
+
+// test-private-code
+export const testExports = { inferValueType, getValue };
+// end-test-private-code
