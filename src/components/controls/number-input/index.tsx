@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { forwardRef, Ref } from 'react';
 import Input from '../../../components/controls/base/input';
-import { SpecificInputProps } from '../../../components/controls/types';
+import { ForwardRef, SpecificInputProps } from '../../../components/controls/types';
 
 export type NumberInputProps = SpecificInputProps<number>;
 
-export default function NumberInput(inputProps: NumberInputProps) {
-  return <Input {...inputProps} type="number" />;
-}
+export default forwardRef((inputProps: NumberInputProps, ref?: Ref<HTMLInputElement>) => {
+  return <Input {...inputProps} type="number" ref={ref} />;
+}) as ForwardRef<HTMLInputElement>;

@@ -1,11 +1,11 @@
-import React, { ChangeEvent } from 'react';
-import { ReactSelectProps, OnValueChange, SelectOptionValue, SelectOption } from '../../../../components/controls/types';
+import React, { ChangeEvent, DetailedHTMLProps, forwardRef, Ref, RefAttributes, SelectHTMLAttributes } from 'react';
+import { ForwardRef, OnValueChange, SelectOption, SelectOptionValue } from '../../../../components/controls/types';
 
-export type SelectProps<T extends SelectOptionValue> = ReactSelectProps & OnValueChange<T> & {
+export type SelectProps<T extends SelectOptionValue> = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> & RefAttributes<HTMLSelectElement> & OnValueChange<T> & {
   options: SelectOption<T>[],
 }
 
-export default function Select<T extends SelectOptionValue>({ options, onChange, onValueChange, ...selectProps }: SelectProps<T>) {
+export default forwardRef(<T extends SelectOptionValue>({ options, onChange, onValueChange, ...selectProps }: SelectProps<T>, ref?: Ref<HTMLSelectElement>) => {
   const onChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {
     if (onChange) {
       onChange(event);
@@ -19,7 +19,7 @@ export default function Select<T extends SelectOptionValue>({ options, onChange,
   };
 
   return (
-    <select {...selectProps} onChange={onChangeHandler}>
+    <select {...selectProps} onChange={onChangeHandler} ref={ref}>
       {options.map(({ value, label }, index) => (
         <option
           key={index}
@@ -31,7 +31,7 @@ export default function Select<T extends SelectOptionValue>({ options, onChange,
       ))}
     </select>
   );
-}
+}) as ForwardRef<HTMLSelectElement>;
 
 function inferValueType(value: SelectOptionValue) {
   return typeof value as 'string' | 'number' | 'boolean';

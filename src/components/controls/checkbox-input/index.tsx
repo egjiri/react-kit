@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { forwardRef, Ref } from 'react';
 import Input from '../../../components/controls/base/input';
-import { SpecificInputProps } from '../../../components/controls/types';
+import { ForwardRef, SpecificInputProps } from '../../../components/controls/types';
 
 export type CheckboxInputProps = Omit<SpecificInputProps<boolean>, 'value'> & {
   value?: boolean;
 };
 
-export default function CheckboxInput({ value, ...inputProps }: CheckboxInputProps) {
-  return <Input {...inputProps} type="checkbox" checked={value} />;
-}
+export default forwardRef(({ value, ...inputProps }: CheckboxInputProps, ref?: Ref<HTMLInputElement>) => {
+  return <Input {...inputProps} type="checkbox" checked={value} ref={ref} />;
+}) as ForwardRef<HTMLInputElement>;

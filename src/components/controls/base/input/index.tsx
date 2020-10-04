@@ -1,9 +1,10 @@
-import React, { ChangeEvent } from 'react';
-import { ReactInputProps, OnValueChange } from '../../../../components/controls/types';
+import React, { ChangeEvent, DetailedHTMLProps, forwardRef, InputHTMLAttributes, Ref, RefAttributes } from 'react';
+import { ForwardRef, OnValueChange } from '../../../../components/controls/types';
 
-export type InputProps<T> = ReactInputProps & OnValueChange<T>;
+export type ReactInputProps = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
+export type InputProps<T> = ReactInputProps & RefAttributes<HTMLInputElement> & OnValueChange<T>;
 
-export default function Input<T extends string | number | boolean>({ type, onChange, onValueChange, ...inputProps }: InputProps<T>) {
+export default forwardRef(<T extends string | number | boolean>({ type, onChange, onValueChange, ...inputProps }: InputProps<T>, ref?: Ref<HTMLInputElement>) => {
   const onchangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(event);
@@ -16,8 +17,8 @@ export default function Input<T extends string | number | boolean>({ type, onCha
     }
   };
 
-  return <input {...inputProps} type={type} onChange={onchangeHandler} />;
-}
+  return <input {...inputProps} type={type} onChange={onchangeHandler} ref={ref} />;
+}) as ForwardRef<HTMLInputElement>;
 
 function inferValueType(inputType: ReactInputProps['type']) {
   if (inputType === 'number') {

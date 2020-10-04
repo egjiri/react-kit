@@ -1,10 +1,7 @@
-import { DetailedHTMLProps, InputHTMLAttributes, SelectHTMLAttributes, TextareaHTMLAttributes } from 'react';
+import { ReactElement, RefAttributes } from 'react';
+import { InputProps } from './base/input';
 
-export type ReactInputProps = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
-export type ReactTextareaProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement>;
-export type ReactSelectProps = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement>;
-
-export type SpecificInputProps<T> = Omit<ReactInputProps, 'type'> & OnValueChange<T>
+export type SpecificInputProps<T> = Omit<InputProps<T>, 'type'>
 
 export type OnValueChange<T> = {
   onValueChange?: (value: T) => void;
@@ -15,3 +12,5 @@ export type SelectOption<T extends SelectOptionValue> = {
   value: T
   label: string
 }
+
+export type ForwardRef<T> = <Props>(props: Props & RefAttributes<T>) => ReactElement | null

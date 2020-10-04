@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { forwardRef, Ref } from 'react';
 import Input from '../../../components/controls/base/input';
-import { SpecificInputProps } from '../../../components/controls/types';
+import { ForwardRef, SpecificInputProps } from '../../../components/controls/types';
 
 export type TextInputProps = SpecificInputProps<string> & {
   type?: 'text' | 'password' | 'email'
 }
 
-export default function TextInput({ type = 'text', ...inputProps }: TextInputProps) {
-  return <Input {...inputProps} type={type} />;
-}
+export default forwardRef(({ type = 'text', ...inputProps }: TextInputProps, ref?: Ref<HTMLInputElement>) => {
+  return <Input {...inputProps} type={type} ref={ref} />;
+}) as ForwardRef<HTMLInputElement>;
