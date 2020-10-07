@@ -32,8 +32,7 @@ function inferValueType(inputType: ReactInputProps['type']) {
 
 function getValue(event: ChangeEvent<HTMLInputElement>, valueType: ValueType) {
   if (valueType === 'number') {
-    const value = event.target.value;
-    return value ? parseFloat(value) : null;
+    return parseFloat(event.target.value);
   } else if (valueType === 'boolean') {
     return event.target.checked;
   } else {
