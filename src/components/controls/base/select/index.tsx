@@ -3,8 +3,8 @@ import React, { ChangeEvent, DetailedHTMLProps, forwardRef, Ref, RefAttributes, 
 import type { ForwardRef, OnValueChange, SelectOption, SelectOptionValue, ValueType } from '../../../../components/controls/types';
 
 export type SelectProps<T extends SelectOptionValue> = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> & RefAttributes<HTMLSelectElement> & OnValueChange<T> & {
-  options: SelectOption<T>[],
-}
+  options: SelectOption<T>[];
+};
 
 export default forwardRef(<T extends SelectOptionValue>({ options, onChange, onValueChange, ...selectProps }: SelectProps<T>, ref?: Ref<HTMLSelectElement>) => {
   const onChangeHandler = (event: ChangeEvent<HTMLSelectElement>) => {

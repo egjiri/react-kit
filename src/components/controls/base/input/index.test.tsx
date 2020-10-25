@@ -33,6 +33,6 @@ describe('test getValue function', () => {
   });
 });
 
-function changeEventMock<T = HTMLInputElement>(target: { value?: string, checked?: boolean }) {
+function changeEventMock<T = HTMLInputElement>(target: { value?: string; checked?: boolean }) {
   return { target } as ChangeEvent<T>;
 }
