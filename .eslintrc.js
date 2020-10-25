@@ -4,6 +4,7 @@ module.exports = {
   plugins: ['@typescript-eslint'],
   extends: [
     'eslint:recommended',
+    'plugin:react/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
   ],
@@ -24,6 +25,7 @@ module.exports = {
     'quote-props': ['error', 'as-needed'],
     'keyword-spacing': 'error',
     'comma-spacing': ['error', { before: false, after: true }],
+    'react/display-name': 'off', // TODO: Fix these errors and remove this rule
     '@typescript-eslint/explicit-module-boundary-types': 'off',
   },
   globals: {
