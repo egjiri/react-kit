@@ -20,6 +20,7 @@
     "esModuleInterop": true,
     // Advanced
     "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
     "resolveJsonModule": true,
     "skipLibCheck": true,
   },

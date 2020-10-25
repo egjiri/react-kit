@@ -1,5 +1,6 @@
-import { Cases } from '@egjiri/node-kit/testing/helpers';
 import { buildClassName } from '.';
+
+import type { Cases } from '@egjiri/node-kit/testing/helpers';
 
 describe('test buildClassName function', () => {
   const cases: Cases<typeof buildClassName> = [

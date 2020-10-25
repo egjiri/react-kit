@@ -1,5 +1,6 @@
 import React, { ChangeEvent, DetailedHTMLProps, forwardRef, Ref, RefAttributes, SelectHTMLAttributes } from 'react';
-import { ForwardRef, OnValueChange, SelectOption, SelectOptionValue, ValueType } from '../../../../components/controls/types';
+
+import type { ForwardRef, OnValueChange, SelectOption, SelectOptionValue, ValueType } from '../../../../components/controls/types';
 
 export type SelectProps<T extends SelectOptionValue> = DetailedHTMLProps<SelectHTMLAttributes<HTMLSelectElement>, HTMLSelectElement> & RefAttributes<HTMLSelectElement> & OnValueChange<T> & {
   options: SelectOption<T>[],

@@ -1,6 +1,7 @@
 import React, { forwardRef, Ref } from 'react';
 import Input from '../../../components/controls/base/input';
-import { SpecificInputProps } from '../../../components/controls/types';
+
+import type { SpecificInputProps } from '../../../components/controls/types';
 
 export type TextInputProps = SpecificInputProps<string> & {
   type?: 'text' | 'password' | 'email'

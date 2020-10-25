@@ -1,6 +1,8 @@
-import { Cases } from '@egjiri/node-kit/testing/helpers';
-import { ChangeEvent } from 'react';
 import { testExports } from '.';
+
+import type { Cases } from '@egjiri/node-kit/testing/helpers';
+import type { ChangeEvent } from 'react';
+
 const { inferValueType, getValue } = testExports;
 
 describe('test inferValueType function', () => {

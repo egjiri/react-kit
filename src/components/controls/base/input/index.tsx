@@ -1,5 +1,6 @@
 import React, { ChangeEvent, DetailedHTMLProps, forwardRef, InputHTMLAttributes, Ref, RefAttributes } from 'react';
-import { ForwardRef, OnValueChange, ValueType } from '../../../../components/controls/types';
+
+import type { ForwardRef, OnValueChange, ValueType } from '../../../../components/controls/types';
 
 export type ReactInputProps = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 export type InputProps<T> = ReactInputProps & RefAttributes<HTMLInputElement> & OnValueChange<T>;

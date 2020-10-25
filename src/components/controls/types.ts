@@ -1,5 +1,5 @@
-import { ReactElement, RefAttributes } from 'react';
-import { InputProps } from './base/input';
+import type { ReactElement, RefAttributes } from 'react';
+import type { InputProps } from './base/input';
 
 export type SpecificInputProps<T> = Omit<InputProps<T>, 'type'>
 

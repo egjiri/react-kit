@@ -1,5 +1,6 @@
 import React, { ChangeEvent, DetailedHTMLProps, forwardRef, Ref, RefAttributes, TextareaHTMLAttributes } from 'react';
-import { OnValueChange } from '../../../controls/types';
+
+import type { OnValueChange } from '../../../controls/types';
 
 export type TextareaProps = DetailedHTMLProps<TextareaHTMLAttributes<HTMLTextAreaElement>, HTMLTextAreaElement> & RefAttributes<HTMLTextAreaElement> & OnValueChange<string>;
 
