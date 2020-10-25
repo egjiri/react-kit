@@ -1,7 +1,9 @@
 import type { ReactElement, RefAttributes } from 'react';
 import type { InputProps } from './base/input';
 
-export type SpecificInputProps<T> = Omit<InputProps<T>, 'type'>;
+export type SpecificInputProps<T> = Omit<Omit<InputProps<T>, 'type'>, 'value'> & {
+  value?: T;
+};
 
 export type OnValueChange<T> = {
   onValueChange?: (value: T) => void;
